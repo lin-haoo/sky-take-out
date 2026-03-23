@@ -100,4 +100,30 @@ public class EmployeeController {
         return Result.success();
     }
 
+    /**
+     * 根据id查询员工信息
+     * @param id
+     * @return
+     */
+    @GetMapping("/{id}")
+    @ApiOperation("根据id查询员工信息")
+    public Result<Employee> getById(@PathVariable Long id) {
+        Employee e = employeeService.getById(id);
+        return Result.success(e);
+    }
+
+    /**
+     * 编辑员工信息
+     * @param employeeDTO
+     * @return
+     * 这里的修改员工的数据是网页上进行的，前端的数据都是打包成DTO，所以后面要修改后端的时候要DTO转employee
+     */
+    @PutMapping
+    @ApiOperation("编辑员工信息")
+    public Result update(@RequestBody EmployeeDTO employeeDTO) {
+        log.info("编辑员工信息");
+        employeeService.update(employeeDTO);
+        return Result.success();
+    }
+
 }
