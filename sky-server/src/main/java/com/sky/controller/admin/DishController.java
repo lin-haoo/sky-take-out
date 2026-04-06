@@ -44,4 +44,17 @@ public class DishController {
         return Result.success(pageResult);
     }
 
+    /**
+     * 批量删除菜品
+     * @param ids
+     * @return
+     */
+    @DeleteMapping
+    @ApiOperation("批量删除菜品")
+    public Result delete(@RequestParam List<Long> ids) {
+        log.info("菜品批量删除：{}", ids);
+        dishService.deleteBatch(ids);
+        return Result.success();
+    }
+
 }
