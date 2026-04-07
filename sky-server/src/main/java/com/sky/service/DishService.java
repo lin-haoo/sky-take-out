@@ -43,9 +43,9 @@ public interface DishService {
     void updateWithFlavor(DishDTO dishDTO);
 
     /**
-     * 根据分类id查询菜品
+     * 根据分类id查询菜品，答案的函数名为list
      * @param categoryId
      * @return
      */
-    public List<Dish> listByCategoryId(Long categoryId);
+    List<Dish> listByCategoryId(Long categoryId);
 }

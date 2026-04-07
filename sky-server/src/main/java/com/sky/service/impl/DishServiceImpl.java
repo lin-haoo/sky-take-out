@@ -170,7 +170,7 @@ public class DishServiceImpl implements DishService {
                 .categoryId(categoryId)
                 .status(StatusConstant.ENABLE)  //只查询启售中的菜品  ??
                 .build();
-        return dishMapper.listByCategoryId(categoryId);
+        return dishMapper.listByCategoryId(dish);
 
     }
 }

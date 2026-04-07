@@ -64,7 +64,7 @@
         where id = #{id}
     </update>
 
-    <select id="listByCategoryId" resultType="com.sky.entity.Dish">
+    <select id="listByCategoryId" resultType="Dish" parameterType="Dish">
         select * from dish 
         <where>
             <if test="name != null">

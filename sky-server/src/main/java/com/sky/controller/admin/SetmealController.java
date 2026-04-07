@@ -14,6 +14,9 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 
+/**
+ * 套餐管理
+ */
 @RestController
 @RequestMapping("/admin/setmeal")
 @Api(tags = "套餐相关接口")
