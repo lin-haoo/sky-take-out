@@ -9,4 +9,11 @@ public interface SetmealService {
      * @param setmealDTO
      */
     void saveWithDish(SetmealDTO setmealDTO);
+
+    /**
+     * 分页查询
+     * @param setmealPageQueryDTO
+     */
+    PageResult pageQuery(SetmealPageQueryDTO setmealPageQueryDTO);
+
 }

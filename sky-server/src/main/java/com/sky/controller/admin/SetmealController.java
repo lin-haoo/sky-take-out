@@ -39,4 +39,14 @@ public class SetmealController {
         return Result.success();
     }
 
+    /**
+     * 分页查询套餐
+      * @param setmealPageQueryDTO
+     */
+    public Result<PageResult> page(SetmealPageQueryDTO setmealPageQueryDTO) {
+        log.info("分页查询套餐：{}", setmealPageQueryDTO);
+        PageResult pageResult = setmealService.pageQuery(setmealPageQueryDTO);
+        return Result.success(pageResult);
+    }
+
 }

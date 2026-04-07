@@ -21,4 +21,10 @@ public interface SetmealMapper {
     @AutoFill(OperationType.INSERT)
     void insert(Setmeal setmeal);
 
+    /**
+     * 分页查询，DTO转了一下VO
+      * @param setmealPageQueryDTO
+     */
+    Page<SetmealVO> pageQuery(SetmealPageQueryDTO setmealPageQueryDTO);
+
 }
