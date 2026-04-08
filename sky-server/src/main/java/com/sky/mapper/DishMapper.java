@@ -54,7 +54,7 @@ public interface DishMapper {
 
     /**
      * 根据ids批量删除菜品
-     * @param id
+     * @param ids
      */
     void deleteByIds(List<Long> ids);
 
@@ -67,7 +67,7 @@ public interface DishMapper {
 
     /**
      * 动态条件查询菜品
-     * @param categoryId
+     * @param dish
      * @return
      */
     List<Dish> listByCategoryId(Dish dish);

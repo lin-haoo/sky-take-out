@@ -115,9 +115,10 @@ public class CategoryServiceImpl implements CategoryService {
         Category category = Category.builder()
                 .id(id)
                 .status(status)
+                .build();
                 //.updateTime(LocalDateTime.now())
                 //.updateUser(BaseContext.getCurrentId())  //公共属性就都不用赋值了，mapper那里加上注解就会赋值
-                .build();
+
         categoryMapper.update(category);
     }
 

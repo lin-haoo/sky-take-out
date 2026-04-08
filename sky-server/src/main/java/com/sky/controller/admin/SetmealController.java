@@ -1,10 +1,10 @@
 package com.sky.controller.admin;
 
+import com.sky.dto.SetmealPageQueryDTO;
+import com.sky.result.PageResult;
+import com.sky.vo.SetmealVO;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.sky.dto.SetmealDTO;
 import com.sky.result.Result;
@@ -13,6 +13,8 @@ import com.sky.service.SetmealService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
+
+import java.util.List;
 
 /**
  * 套餐管理
@@ -56,7 +58,7 @@ public class SetmealController {
      * @param ids
      * @return
      */
-    @DelteMapping
+    @DeleteMapping
     @ApiOperation("批量删除套餐")
     public Result delete(@RequestParam List<Long> ids) {
         log.info("删除套餐：{}", ids);
@@ -95,6 +97,8 @@ public class SetmealController {
      * @param id
      * @return
     */
+    @PostMapping("/status/{status}")
+    @ApiOperation("套餐起售停售")
     public Result startOrStop(@PathVariable Integer status, Long id) {
         log.info("修改套餐状态：{}，id：{}", status, id);
         setmealService.startOrStop(status, id);
